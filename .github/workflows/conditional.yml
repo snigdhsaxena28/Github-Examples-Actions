@@ -2,7 +2,7 @@ name: example-workflow
 on: [push]
 jobs:
     hello-world:
-        if: github.base_ref == 'main'
+        if: github.ref_name == 'main'
         runs-on: ubuntu-latest
         steps:
             - name: "Hello World"
@@ -11,4 +11,4 @@ jobs:
         runs-on: ubuntu-latest
         steps:
             - name: "Goodbye Moon"
-              run: echo "Goodbye Moon! ${{github.base_ref}}"
+              run: echo "Goodbye Moon! ${{github.ref_name}}"
